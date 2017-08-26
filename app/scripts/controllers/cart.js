@@ -2,7 +2,7 @@
 
 
 angular.module('demoApp')
-    .controller('CartCtrl', ['$scope', 'shoppingCart', '$http', function ($scope, shoppingCart, $http) {
+    .controller('CartCtrl', ['$scope', 'shoppingCart','$location', '$http', function ($scope, shoppingCart,$location, $http) {
         $scope.shoppingCart = shoppingCart;
 
         $scope.updateCart = function (shoppingCart, stock) {
@@ -20,12 +20,14 @@ angular.module('demoApp')
         $scope.deleteProduct = function (shoppingCart) {
             $scope.shoppingCart = {};
             $http.delete('https://radiant-brook-97312.herokuapp.com/shoppingCart/' + shoppingCart.id);
+            $location.path('/cart');
             return '/cart';
         }
 
 
         $scope.clearCart = function (shoppingCart) {
             $http.delete('https://radiant-brook-97312.herokuapp.com/shoppingCart/');
+            $location.path('/cart');
             return '/cart';
         }
 
@@ -35,6 +37,7 @@ angular.module('demoApp')
             for (i = 0; i < shoppingCart.length; i++) {
                 $http.post('https://radiant-brook-97312.herokuapp.com/shoppingCart/purchase/' + shoppingCart[i].id);
             }
+            $location.path('/history');
             return '/history';
         }
     }]);
