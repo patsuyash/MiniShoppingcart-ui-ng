@@ -18,7 +18,7 @@ angular
                 controllerAs: 'main',
                 resolve: {
                     products: function ($http) {
-                        return $http.get("http://radiant-brook-97312.herokuapp.com/products").then(function (response) {
+                        return $http.get("https://radiant-brook-97312.herokuapp.com/products").then(function (response) {
                             return response.data;
                         })
                     }
@@ -31,7 +31,7 @@ angular
                 controllerAs: 'cart',
                 resolve: {
                     shoppingCart: function ($http) { //  data assign to shoppingCart list
-                        return $http.get("http://radiant-brook-97312.herokuapp.com/shoppingCart").then(function (response) {
+                        return $http.get("https://radiant-brook-97312.herokuapp.com/shoppingCart").then(function (response) {
                             return response.data;
                         })
                     }
@@ -44,7 +44,7 @@ angular
                 controllerAs: 'history',
                 resolve: {
                     history: function ($http) {
-                        return $http.get("http://radiant-brook-97312.herokuapp.com/history").then(function (response) {
+                        return $http.get("https://radiant-brook-97312.herokuapp.com/history").then(function (response) {
                             return response.data;
                         })
                     }

@@ -16,6 +16,6 @@ angular.module('demoApp')
             }else {
                 $scope.shoppingCart.stock = stock;
             }
-            $http.post('http://radiant-brook-97312.herokuapp.com/shoppingCart', $scope.shoppingCart);
+            $http.post('https://radiant-brook-97312.herokuapp.com/shoppingCart', $scope.shoppingCart);
         }
     }]);

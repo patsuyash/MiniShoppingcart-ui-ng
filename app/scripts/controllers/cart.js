@@ -13,19 +13,19 @@ angular.module('demoApp')
             } else {
                 $scope.shoppingCart.stock = stock;
             }
-            $http.put('http://radiant-brook-97312.herokuapp.com/shoppingCart/' + shoppingCart.id, $scope.shoppingCart);
+            $http.put('https://radiant-brook-97312.herokuapp.com/shoppingCart/' + shoppingCart.id, $scope.shoppingCart);
             return '/cart';
         }
 
         $scope.deleteProduct = function (shoppingCart) {
             $scope.shoppingCart = {};
-            $http.delete('http://radiant-brook-97312.herokuapp.com/shoppingCart/' + shoppingCart.id);
+            $http.delete('https://radiant-brook-97312.herokuapp.com/shoppingCart/' + shoppingCart.id);
             return '/cart';
         }
 
 
         $scope.clearCart = function (shoppingCart) {
-            $http.delete('http://radiant-brook-97312.herokuapp.com/shoppingCart/');
+            $http.delete('https://radiant-brook-97312.herokuapp.com/shoppingCart/');
             return '/cart';
         }
 
@@ -33,7 +33,7 @@ angular.module('demoApp')
         $scope.purchaseProducts = function (shoppingCart) {
             var i = 0;
             for (i = 0; i < shoppingCart.length; i++) {
-                $http.post('http://radiant-brook-97312.herokuapp.com/shoppingCart/purchase/' + shoppingCart[i].id);
+                $http.post('https://radiant-brook-97312.herokuapp.com/shoppingCart/purchase/' + shoppingCart[i].id);
             }
             return '/history';
         }
